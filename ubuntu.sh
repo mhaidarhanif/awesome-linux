@@ -76,13 +76,12 @@ sudo apt-get install -y brackets
 sudo apt-get install -y code code-insiders
 
 # nodejs
-sudo apt-get install -y nodejs
-
 # java
 # sudo apt-get install -y openjdk-9-jdk openjdk-9-jre
 sudo apt-get install -y default-jdk default-jre
 
 # android studio
+sudo mkdir /opt/android-studio
 sudo apt-get install -y android-studio
 
 # libreoffice
