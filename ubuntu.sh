@@ -8,12 +8,12 @@ git clone https://github.com/mhaidarh/awesome-ubuntu
 # ------------------------------------------------------------------------------
 
 # ppa
-sudo add-apt-repository ppa:webupd8team/atom
-sudo add-apt-repository ppa:webupd8team/brackets
-sudo add-apt-repository ppa:ubuntu-mozilla-daily/firefox-aurora
-sudo add-apt-repository ppa:paolorotolo/android-studio
-sudo add-apt-repository ppa:gnome-terminator
-sudo add-apt-repository ppa:libreoffice/ppa
+sudo add-apt-repository -y ppa:webupd8team/atom
+sudo add-apt-repository -y ppa:webupd8team/brackets
+sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/firefox-aurora
+sudo add-apt-repository -y ppa:paolorotolo/android-studio
+sudo add-apt-repository -y ppa:gnome-terminator
+sudo add-apt-repository -y ppa:libreoffice/ppa
 
 # google chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -27,27 +27,27 @@ sudo wget -O /etc/apt/sources.list.d/vscode.list https://tagplus5.github.io/vsco
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
 sudo add-apt-repository 'deb http://mirror.jmu.edu/pub/mariadb/repo/5.5/ubuntu trusty main'
 
-sudo apt-get update
+sudo apt-get update -y
 
 # ------------------------------------------------------------------------------
 
 # shell
-sudo apt-get install zsh
+sudo apt-get install -y zsh
 # http://askubuntu.com/questions/479286/14-04-not-authenticating-on-chsh-command
 echo $(which zsh) | sudo tee -a /etc/shells
 sudo chsh -s $(which zsh) $(whoami)
+# logout/restart
 
 # utilities
-sudo apt-get install vi vim curl httpie wget tree font-roboto
-sudo apt-get install software-properties-common
-sudo apt-get install build-essential checkinstall
+sudo apt-get install -y vim curl httpie wget tree fonts-roboto
+sudo apt-get install -y software-properties-common build-essential checkinstall
 
 # terminator
-sudo apt-get install terminator
+sudo apt-get install -y terminator
 
 # chromium, google chrome
-sudo apt-get install chromium
-sudo apt-get install google-chrome-stable
+sudo apt-get install -y chromium
+sudo apt-get install -y google-chrome-stable
 
 # Extensions
 # AdBlock Pro
@@ -55,34 +55,34 @@ sudo apt-get install google-chrome-stable
 # Postman
 
 # firefox
-sudo apt-get install firefox
+sudo apt-get install -y firefox
 
 # ------------------------------------------------------------------------------
 
 # atom editor
-sudo apt-get install atom
+sudo apt-get install -y atom
 
 # brackets
-sudo apt-get install brackets
+sudo apt-get install -y brackets
 
 # vs code
-sudo apt install code code-insiders
+sudo apt-get install -y code code-insiders
 
 # nodejs
-sudo apt-get install nodejs
+sudo apt-get install -y nodejs
 
 # android studio
-sudo apt-get install android-studio
+sudo apt-get install -y android-studio
 
 # libreoffice
-sudo apt-get install libreoffice
+sudo apt-get install -y libreoffice
 
 # ------------------------------------------------------------------------------
 
 # database
 
 # mysql, mariadb
-sudo apt-get install mariadb-server
+sudo apt-get install -y mariadb-server
 sudo service mysql stop
 sudo mysql_install_db
 sudo service mysql start
@@ -90,10 +90,10 @@ sudo mysql_secure_installation
 mysql -V
 
 # postgresql
-sudo apt-get install postgresql-9.4
+sudo apt-get install -y postgresql-9.4
 
 # mongodb
-sudo apt-get install mongodb-org
+sudo apt-get install -y mongodb-org
 
 # robomongo
 wget https://download.robomongo.org/0.8.5/linux/robomongo-0.8.5-x86_64.deb
