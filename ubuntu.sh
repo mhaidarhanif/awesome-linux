@@ -33,11 +33,12 @@ sudo apt-get update
 
 # shell
 sudo apt-get install zsh
-sudo chsh -s =zsh
-chsh -s =zsh
+# http://askubuntu.com/questions/479286/14-04-not-authenticating-on-chsh-command
+echo $(which zsh) | sudo tee -a /etc/shells
+sudo chsh -s $(which zsh) $(whoami)
 
 # utilities
-sudo apt-get install curl httpie wget tree font-roboto
+sudo apt-get install vi vim curl httpie wget tree font-roboto
 sudo apt-get install software-properties-common
 sudo apt-get install build-essential checkinstall
 
