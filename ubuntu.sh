@@ -1,7 +1,8 @@
-# automatic script for ubuntu
+# scripts for ubuntu
 
 # ------------------------------------------------------------------------------
 
+cd ~/Desktop
 sudo apt-get install git
 git clone https://github.com/mhaidarh/awesome-ubuntu
 
@@ -46,8 +47,7 @@ sudo apt-get install -y software-properties-common build-essential checkinstall
 sudo apt-get install -y terminator
 
 # chromium, google chrome
-sudo apt-get install -y chromium
-sudo apt-get install -y google-chrome-stable
+sudo apt-get install -y chromium-browser google-chrome-stable
 
 # Extensions
 # AdBlock Pro
@@ -56,6 +56,13 @@ sudo apt-get install -y google-chrome-stable
 
 # firefox
 sudo apt-get install -y firefox
+
+# ------------------------------------------------------------------------------
+
+# hyper.is terminal
+# wget https://github.com/zeit/hyper/releases/download/1.1.0/hyper-1.1.0.deb
+wget -c -O hyper.deb https://hyper-updates.now.sh/download/linux_deb
+sudo dpkg -i hyper.deb
 
 # ------------------------------------------------------------------------------
 
@@ -71,11 +78,20 @@ sudo apt-get install -y code code-insiders
 # nodejs
 sudo apt-get install -y nodejs
 
+# java
+# sudo apt-get install -y openjdk-9-jdk openjdk-9-jre
+sudo apt-get install -y default-jdk default-jre
+
 # android studio
 sudo apt-get install -y android-studio
 
 # libreoffice
 sudo apt-get install -y libreoffice
+
+# ------------------------------------------------------------------------------
+
+# node modules
+npm install -g babel-node express-generator
 
 # ------------------------------------------------------------------------------
 
@@ -101,17 +117,6 @@ sudo dpkg -i robomongo-0.8.5-x86_64.deb
 
 # ------------------------------------------------------------------------------
 
-# node modules
-npm install -g babel-node express-generator
-
-# ------------------------------------------------------------------------------
-
-# hyper.is terminal
-# wget https://github.com/zeit/hyper/releases/download/1.1.0/hyper-1.1.0.deb
-wget https://hyper-updates.now.sh/download/linux_deb
-
-# ------------------------------------------------------------------------------
-
 # zim
 git clone --recursive https://github.com/Eriner/zim.git ${ZDOTDIR:-${HOME}}/.zim
 
@@ -128,5 +133,11 @@ zmanage update
 
 # ------------------------------------------------------------------------------
 
-sudo apt-get autoremove &&
-sudo apt-get clean &&
+# customization
+
+# unity config
+
+# ------------------------------------------------------------------------------
+
+sudo apt-get autoremove -y
+sudo apt-get clean -y
