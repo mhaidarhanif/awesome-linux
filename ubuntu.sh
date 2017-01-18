@@ -16,6 +16,9 @@ sudo add-apt-repository -y ppa:paolorotolo/android-studio
 sudo add-apt-repository -y ppa:gnome-terminator
 sudo add-apt-repository -y ppa:libreoffice/ppa
 
+# nodejs
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+
 # google chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
@@ -76,13 +79,16 @@ sudo apt-get install -y brackets
 sudo apt-get install -y code code-insiders
 
 # nodejs
+sudo apt-get install -y nodejs
+
 # java
 # sudo apt-get install -y openjdk-9-jdk openjdk-9-jre
 sudo apt-get install -y default-jdk default-jre
 
 # android studio
-sudo mkdir /opt/android-studio
-sudo apt-get install -y android-studio
+# please install manually instead from ppa
+# sudo mkdir /opt/android-studio
+# sudo apt-get install -y android-studio
 
 # libreoffice
 sudo apt-get install -y libreoffice
@@ -104,11 +110,17 @@ sudo service mysql start
 sudo mysql_secure_installation
 mysql -V
 
+# mysql workbench
+sudo apt-get install -y mysql-workbench
+
 # postgresql
-sudo apt-get install -y postgresql-9.4
+sudo apt-get install -y postgresql-9.5 pgadmin3
+
+# sqlite
+sudo apt-get install -y sqlite3 libsqlite3-dev
 
 # mongodb
-sudo apt-get install -y mongodb-org
+sudo apt-get install -y mongodb
 
 # robomongo
 wget https://download.robomongo.org/0.8.5/linux/robomongo-0.8.5-x86_64.deb
