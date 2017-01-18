@@ -43,7 +43,7 @@ sudo chsh -s $(which zsh) $(whoami)
 # logout/restart
 
 # utilities
-sudo apt-get install -y vim curl httpie wget tree fonts-roboto
+sudo apt-get install -y vim curl httpie wget tree fonts-roboto tmux
 sudo apt-get install -y software-properties-common build-essential checkinstall
 
 # terminator
