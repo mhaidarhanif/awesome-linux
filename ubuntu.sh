@@ -46,6 +46,10 @@ sudo chsh -s $(which zsh) $(whoami)
 sudo apt-get install -y vim curl httpie wget tree fonts-roboto tmux
 sudo apt-get install -y software-properties-common build-essential checkinstall
 
+# ssh
+# https://help.ubuntu.com/community/SSH/OpenSSH/Configuring
+sudo apt-get install -y openssh-server
+
 # terminator
 sudo apt-get install -y terminator
 
