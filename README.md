@@ -1,6 +1,6 @@
-# awesome-ubuntu
+# Awesome Linux
 
-Awesome Ubuntu apps.
+Awesome Linux things and apps.
 
 --------------------------------------------------------------------------------
 
@@ -9,7 +9,7 @@ Awesome Ubuntu apps.
 ## Operating System
 
 - macOS
-- Linux Ubuntu
+- Linux Xubuntu
 
 ## Browser
 
