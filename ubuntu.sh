@@ -1,16 +1,21 @@
 # scripts for ubuntu
 
+sudo apt-get install -y ssh vim git curl httpie wget tree tmux
+
+# ssh
+# https://help.ubuntu.com/community/SSH/OpenSSH/Configuring
+sudo ufw allow 22
+
+# ------------------------------------------------------------------------------
+
+sudo locale-gen
+sudo dpkg-reconfigure locales
+
 # ------------------------------------------------------------------------------
 
 sudo -i
 passwd
 sudo passwd -dl root
-
-# ------------------------------------------------------------------------------
-
-cd ~/Desktop
-sudo apt-get install git
-git clone https://github.com/mhaidarh/awesome-ubuntu
 
 # ------------------------------------------------------------------------------
 
@@ -21,6 +26,8 @@ sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/firefox-aurora
 sudo add-apt-repository -y ppa:paolorotolo/android-studio
 sudo add-apt-repository -y ppa:gnome-terminator
 sudo add-apt-repository -y ppa:libreoffice/ppa
+
+# ------------------------------------------------------------------------------
 
 # nodejs
 curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
@@ -49,13 +56,7 @@ sudo chsh -s $(which zsh) $(whoami)
 # logout/restart
 
 # utilities
-sudo apt-get install -y vim curl httpie wget tree fonts-roboto tmux
 sudo apt-get install -y software-properties-common build-essential checkinstall
-
-# ssh
-# https://help.ubuntu.com/community/SSH/OpenSSH/Configuring
-sudo apt-get install -y openssh-server
-sudo ufw allow 22
 
 # terminator
 sudo apt-get install -y terminator
@@ -89,6 +90,8 @@ sudo apt-get install -y brackets
 # vs code
 sudo apt-get install -y code code-insiders
 
+# --------
+
 # nodejs
 sudo apt-get install -y nodejs
 
@@ -107,7 +110,7 @@ sudo apt-get install -y libreoffice
 # ------------------------------------------------------------------------------
 
 # node modules
-npm install -g babel-node express-generator
+sudo npm install -g babel-cli express-generator
 
 # ------------------------------------------------------------------------------
 
@@ -125,7 +128,8 @@ mysql -V
 sudo apt-get install -y mysql-workbench
 
 # postgresql
-sudo apt-get install -y postgresql-9.5 pgadmin3
+sudo apt-get install -y postgresql-9.5
+sudo apt-get install -y pgadmin3
 
 # sqlite
 sudo apt-get install -y sqlite3 libsqlite3-dev
@@ -163,3 +167,4 @@ zmanage update
 
 sudo apt-get autoremove -y
 sudo apt-get clean -y
+
