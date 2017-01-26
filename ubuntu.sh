@@ -157,6 +157,10 @@ source ${ZDOTDIR:-${HOME}}/.zlogin
 
 zmanage update
 
+vim ~/.zshrc
+LC_CTYPE=en_US.UTF-8
+LC_ALL=en_US.UTF-8
+
 # ------------------------------------------------------------------------------
 
 # customization
