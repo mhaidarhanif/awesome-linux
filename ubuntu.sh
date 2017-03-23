@@ -1,6 +1,6 @@
 # scripts for ubuntu
 
-sudo apt-get install -y ssh vim git curl httpie wget tree tmux
+sudo apt-get install -y ssh vim git curl httpie wget tree tmux xclip
 
 # ssh
 # https://help.ubuntu.com/community/SSH/OpenSSH/Configuring
@@ -20,12 +20,14 @@ sudo passwd -dl root
 # ------------------------------------------------------------------------------
 
 # ppa
+sudo add-apt-repository -y ppa:flexiondotorg/yadm
+sudo add-apt-repository -y ppa:nathan-renniewaldock/flux
+sudo add-apt-repository -y ppa:gnome-terminator
+sudo add-apt-repository -y ppa:libreoffice/ppa
 sudo add-apt-repository -y ppa:webupd8team/atom
 sudo add-apt-repository -y ppa:webupd8team/brackets
 sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/firefox-aurora
 sudo add-apt-repository -y ppa:paolorotolo/android-studio
-sudo add-apt-repository -y ppa:gnome-terminator
-sudo add-apt-repository -y ppa:libreoffice/ppa
 
 # ------------------------------------------------------------------------------
 
@@ -56,10 +58,11 @@ sudo chsh -s $(which zsh) $(whoami)
 # logout/restart
 
 # utilities
-sudo apt-get install -y software-properties-common build-essential checkinstall
+sudo apt-get install -y software-properties-common build-essential checkinstall fluxgui
 
-# terminator
-sudo apt-get install -y terminator
+sudo apt-get install -y yadm
+
+# ------------------------------------------------------------------------------
 
 # chromium, google chrome
 sudo apt-get install -y chromium-browser google-chrome-stable
@@ -74,10 +77,21 @@ sudo apt-get install -y firefox
 
 # ------------------------------------------------------------------------------
 
+# terminator
+sudo apt-get install -y terminator
+
 # hyper.is terminal
 # wget https://github.com/zeit/hyper/releases/download/1.1.0/hyper-1.1.0.deb
-wget -c -O hyper.deb https://hyper-updates.now.sh/download/linux_deb
-sudo dpkg -i hyper.deb
+# wget -c -O hyper.deb https://hyper-updates.now.sh/download/linux_deb
+# sudo dpkg -i hyper.deb
+
+# ------------------------------------------------------------------------------
+
+# transmission
+sudo apt-get install -y transmission
+
+# pinta
+sudo apt-get install -y pinta
 
 # ------------------------------------------------------------------------------
 
@@ -90,7 +104,7 @@ sudo apt-get install -y brackets
 # vs code
 sudo apt-get install -y code code-insiders
 
-# --------
+# ------------------------------------------------------------------------------
 
 # nodejs
 sudo apt-get install -y nodejs
