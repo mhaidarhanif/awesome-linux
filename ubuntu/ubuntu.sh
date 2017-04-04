@@ -1,6 +1,14 @@
-# scripts for ubuntu
+# ==============================================================================
+# ubuntu.sh
+# ==============================================================================
 
-sudo apt-get install -y ssh vim git curl httpie wget tree tmux xclip
+# yadm
+sudo apt-get install -y \
+  yadm \
+  ssh tmux xclip unzip tree \
+  vim vim-gui-common \
+  git tig \
+  curl httpie wget
 
 # ssh
 # https://help.ubuntu.com/community/SSH/OpenSSH/Configuring
@@ -28,6 +36,8 @@ sudo add-apt-repository -y ppa:webupd8team/atom
 sudo add-apt-repository -y ppa:webupd8team/brackets
 sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/firefox-aurora
 sudo add-apt-repository -y ppa:paolorotolo/android-studio
+sudo apt-add-repository -y ppa:jfi/ppa
+sudo add-apt-repository -y ppa:hluk/copyq
 
 # ------------------------------------------------------------------------------
 
@@ -58,9 +68,14 @@ sudo chsh -s $(which zsh) $(whoami)
 # logout/restart
 
 # utilities
-sudo apt-get install -y software-properties-common build-essential checkinstall fluxgui
+sudo apt-get install -y software-properties-common build-essential checkinstall
 
-sudo apt-get install -y yadm
+# indicator
+# display, load, cpu, temp, clipboard
+sudo apt-get install -y fluxgui indicator-multiload indicator-cpufreq psensor copyq
+
+# git-lfs
+curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 
 # ------------------------------------------------------------------------------
 
@@ -81,9 +96,13 @@ sudo apt-get install -y firefox
 sudo apt-get install -y terminator
 
 # hyper.is terminal
-# wget https://github.com/zeit/hyper/releases/download/1.1.0/hyper-1.1.0.deb
-# wget -c -O hyper.deb https://hyper-updates.now.sh/download/linux_deb
-# sudo dpkg -i hyper.deb
+## wget https://github.com/zeit/hyper/releases/download/1.1.0/hyper-1.1.0.deb
+## wget -c -O hyper.deb https://hyper-updates.now.sh/download/linux_deb
+## sudo dpkg -i hyper.deb
+
+# gnome-panel
+sudo apt-get install -y --no-install-recommends gnome-panel
+## gnome-desktop-item-edit ~/Desktop/ --create-new
 
 # ------------------------------------------------------------------------------
 
@@ -97,12 +116,16 @@ sudo apt-get install -y pinta
 
 # atom editor
 sudo apt-get install -y atom
+##
 
 # brackets
 sudo apt-get install -y brackets
 
 # vs code
 sudo apt-get install -y code code-insiders
+
+# libreoffice
+sudo apt-get install -y libreoffice
 
 # ------------------------------------------------------------------------------
 
@@ -113,21 +136,20 @@ sudo apt-get install -y nodejs
 # sudo apt-get install -y openjdk-9-jdk openjdk-9-jre
 sudo apt-get install -y default-jdk default-jre
 
+# go
+# ...
+
 # android studio
 # please install manually instead from ppa
 # sudo mkdir /opt/android-studio
 # sudo apt-get install -y android-studio
 
-# libreoffice
-sudo apt-get install -y libreoffice
-
 # ------------------------------------------------------------------------------
-
 # node modules
-sudo npm install -g babel-cli express-generator
+
+sudo npm install -g pm2 babel-cli express-generator
 
 # ------------------------------------------------------------------------------
-
 # database
 
 # mysql, mariadb
@@ -152,44 +174,50 @@ sudo apt-get install -y sqlite3 libsqlite3-dev
 sudo apt-get install -y mongodb
 
 # robomongo
-wget https://download.robomongo.org/0.8.5/linux/robomongo-0.8.5-x86_64.deb
-sudo dpkg -i robomongo-0.8.5-x86_64.deb
+## wget https://download.robomongo.org/0.8.5/linux/robomongo-0.8.5-x86_64.deb
+## sudo dpkg -i robomongo-0.8.5-x86_64.deb
+
+# nginx
+sudo apt-get install -y nginx
+
+# sdkman
 
 # ------------------------------------------------------------------------------
+# shell
+# zsh
 
-# zim
-git clone --recursive https://github.com/Eriner/zim.git ${ZDOTDIR:-${HOME}}/.zim
+# prezto: https://github.com/sorin-ionescu/prezto
+## git clone https://github.com/sorin-ionescu/prezto ~/.prezto
 
-setopt EXTENDED_GLOB
-for template_file ( ${ZDOTDIR:-${HOME}}/.zim/templates/* ); do
-  user_file="${ZDOTDIR:-${HOME}}/.${template_file:t}"
-  touch ${user_file}
-  ( print -rn "$(<${template_file})$(<${user_file})" >! ${user_file} ) 2>/dev/null
-done
-
-source ${ZDOTDIR:-${HOME}}/.zlogin
-
-zmanage update
-
-vim ~/.zshrc
-LC_CTYPE=en_US.UTF-8
-LC_ALL=en_US.UTF-8
+# oh-my-zsh: https://github.com/robbyrussell/oh-my-zsh
+## sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # ------------------------------------------------------------------------------
-
 # design
 
-# inkscape
-sudo apt-get install -y inkscape
+# inkscape, gimp
+sudo apt-get install -y inkscape gimp
+
+# imagemagick
+sudo apt-get install -y imagemagick
 
 # ------------------------------------------------------------------------------
-
 # customization
 
-# unity config
+# desktop environment
+# gnome, unity
+sudo apt-get install -y gconf-editor unity-tweak-tool
+
+# theme
+# dark
+sudo add-apt-repository -y ppa:noobslab/themes
+sudo add-apt-repository -y ppa:moka/daily
+sudo apt-get update
+sudo apt-get install -y gtk2-engines-murrine arc-theme
+sudo apt-get install -y moka-icon-theme faba-icon-theme faba-mono-icons
 
 # ------------------------------------------------------------------------------
+# cleanup
 
 sudo apt-get autoremove -y
 sudo apt-get clean -y
-
