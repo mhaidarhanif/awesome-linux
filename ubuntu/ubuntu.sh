@@ -105,9 +105,13 @@ sudo apt-get install -y --no-install-recommends gnome-panel
 ## gnome-desktop-item-edit ~/Desktop/ --create-new
 
 # ------------------------------------------------------------------------------
+# multimedia
 
 # transmission
 sudo apt-get install -y transmission
+
+# youtube-dl
+sudo apt-get install -y youtube-dl
 
 # pinta
 sudo apt-get install -y pinta
