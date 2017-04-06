@@ -8,7 +8,8 @@ sudo apt-get install -y \
   ssh tmux xclip unzip tree \
   vim vim-gui-common \
   git tig \
-  curl httpie wget
+  curl httpie wget \
+  silversearcher-ag
 
 # ssh
 # https://help.ubuntu.com/community/SSH/OpenSSH/Configuring
