@@ -27,8 +27,8 @@ passwd
 sudo passwd -dl root
 
 # ------------------------------------------------------------------------------
-
 # ppa
+
 sudo add-apt-repository -y ppa:flexiondotorg/yadm
 sudo add-apt-repository -y ppa:nathan-renniewaldock/flux
 sudo add-apt-repository -y ppa:gnome-terminator
@@ -36,28 +36,8 @@ sudo add-apt-repository -y ppa:libreoffice/ppa
 sudo add-apt-repository -y ppa:webupd8team/atom
 sudo add-apt-repository -y ppa:webupd8team/brackets
 sudo add-apt-repository -y ppa:ubuntu-mozilla-daily/firefox-aurora
-sudo add-apt-repository -y ppa:paolorotolo/android-studio
 sudo apt-add-repository -y ppa:jfi/ppa
 sudo add-apt-repository -y ppa:hluk/copyq
-
-# ------------------------------------------------------------------------------
-
-# nodejs
-curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
-
-# google chrome
-wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-
-# vs code
-sudo wget -O - https://tagplus5.github.io/vscode-ppa/ubuntu/gpg.key | sudo apt-key add -
-sudo wget -O /etc/apt/sources.list.d/vscode.list https://tagplus5.github.io/vscode-ppa/ubuntu/vscode.list
-
-# mariadb
-sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
-sudo add-apt-repository 'deb http://mirror.jmu.edu/pub/mariadb/repo/5.5/ubuntu trusty main'
-
-sudo apt-get update -y
 
 # ------------------------------------------------------------------------------
 
@@ -81,6 +61,8 @@ curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.s
 # ------------------------------------------------------------------------------
 
 # chromium, google chrome
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 sudo apt-get install -y chromium-browser google-chrome-stable
 
 # Extensions
@@ -92,6 +74,7 @@ sudo apt-get install -y chromium-browser google-chrome-stable
 sudo apt-get install -y firefox
 
 # ------------------------------------------------------------------------------
+# terminal
 
 # terminator
 sudo apt-get install -y terminator
@@ -104,6 +87,41 @@ sudo apt-get install -y terminator
 # gnome-panel
 sudo apt-get install -y --no-install-recommends gnome-panel
 ## gnome-desktop-item-edit ~/Desktop/ --create-new
+
+# ------------------------------------------------------------------------------
+# programming
+
+# nodejs
+curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
+# node modules
+sudo npm install -g pm2 babel-cli express-generator
+
+# python
+sudo apt-get install -y python python-pip
+
+# ruby
+sudo apt-get install -y ruby
+
+# go
+sudo add-apt-repository -y ppa:longsleep/golang-backports
+sudo apt-get update
+sudo apt-get install -y golang-go
+
+# perl
+sudo apt-get install -y perlbrew
+
+# java
+sudo apt-get install -y default-jre default-jdk
+# sudo apt-get install -y openjdk-9-jdk openjdk-9-jre
+# sudo update-alternatives --config java
+
+# android studio
+# sudo add-apt-repository -y ppa:paolorotolo/android-studio
+# please install manually instead from ppa
+# sudo mkdir /opt/android-studio
+# sudo apt-get install -y android-studio
 
 # ------------------------------------------------------------------------------
 # multimedia
@@ -127,37 +145,22 @@ sudo apt-get install -y atom
 sudo apt-get install -y brackets
 
 # vs code
+# vs code
+sudo wget -O - https://tagplus5.github.io/vscode-ppa/ubuntu/gpg.key | sudo apt-key add -
+sudo wget -O /etc/apt/sources.list.d/vscode.list https://tagplus5.github.io/vscode-ppa/ubuntu/vscode.list
 sudo apt-get install -y code code-insiders
 
 # libreoffice
 sudo apt-get install -y libreoffice
 
 # ------------------------------------------------------------------------------
-
-# nodejs
-sudo apt-get install -y nodejs
-
-# java
-# sudo apt-get install -y openjdk-9-jdk openjdk-9-jre
-sudo apt-get install -y default-jdk default-jre
-
-# go
-# ...
-
-# android studio
-# please install manually instead from ppa
-# sudo mkdir /opt/android-studio
-# sudo apt-get install -y android-studio
-
-# ------------------------------------------------------------------------------
-# node modules
-
-sudo npm install -g pm2 babel-cli express-generator
-
-# ------------------------------------------------------------------------------
 # database
 
 # mysql, mariadb
+sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
+sudo add-apt-repository 'deb http://mirror.jmu.edu/pub/mariadb/repo/5.5/ubuntu trusty main'
+sudo apt-get update
+
 sudo apt-get install -y mariadb-server
 sudo service mysql stop
 sudo mysql_install_db
@@ -177,6 +180,11 @@ sudo apt-get install -y sqlite3 libsqlite3-dev
 
 # mongodb
 sudo apt-get install -y mongodb
+
+# redis
+sudo add-apt-repository -y ppa:chris-lea/redis
+sudo apt-get update
+sudo apt-get install -y redis-server
 
 # robomongo
 ## wget https://download.robomongo.org/0.8.5/linux/robomongo-0.8.5-x86_64.deb
