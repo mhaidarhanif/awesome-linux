@@ -233,6 +233,10 @@ sudo apt-get install -y docker-ce
 # gnome, unity
 sudo apt-get install -y gconf-editor unity-tweak-tool
 
+# gnome
+sudo add-apt-repository -y ppa:gnome3-team/gnome3
+sudo apt install -y gnome gnome-shell
+
 # theme
 # dark
 sudo add-apt-repository -y ppa:noobslab/themes
