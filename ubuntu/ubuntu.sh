@@ -9,7 +9,8 @@ sudo apt-get install -y \
   vim vim-gui-common \
   git tig \
   curl httpie wget \
-  silversearcher-ag
+  silversearcher-ag \
+  trash-cli
 
 # ssh
 # https://help.ubuntu.com/community/SSH/OpenSSH/Configuring
