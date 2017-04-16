@@ -181,17 +181,16 @@ sudo apt-get install -y libreoffice
 # ------------------------------------------------------------------------------
 # database
 
-# mysql, mariadb
+# mysql/mariadb
 sudo apt-key adv --recv-keys --keyserver hkp://keyserver.ubuntu.com:80 0xcbcb082a1bb943db
 sudo add-apt-repository 'deb http://mirror.jmu.edu/pub/mariadb/repo/5.5/ubuntu trusty main'
 sudo apt-get update
 
 sudo apt-get install -y mariadb-server
-sudo service mysql stop
 sudo mysql_install_db
-sudo service mysql start
 sudo mysql_secure_installation
-mysql -V
+sudo service mysql status
+sudo mysql -u root -p
 
 # mysql workbench
 sudo apt-get install -y mysql-workbench
