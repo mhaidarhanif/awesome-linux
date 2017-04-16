@@ -97,7 +97,20 @@ curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
 sudo apt-get install -y nodejs
 
 # node modules
-sudo npm install -g pm2 babel-cli express-generator
+sudo npm install -g yarn
+mkdir ~/.yarn-global
+yarn config set prefix ~/.yarn-global
+# export PATH="$PATH:$HOME/.npm/bin:`yarn global bin`"
+npm install -g \
+  pm2 \
+  babel-cli \
+  express-generator \
+  newman \
+  npm-check-updates \
+  bunyan \
+  nsp nsp-formatter-checkstyle \
+  sloc \
+  wt-cli
 
 # python
 sudo apt-get install -y python python-pip
