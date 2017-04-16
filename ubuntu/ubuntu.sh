@@ -260,6 +260,11 @@ sudo add-apt-repository \
    stable"
 sudo apt-get update
 sudo apt-get install -y docker-ce
+sudo groupadd docker
+sudo usermod -aG docker $USER
+# logout
+# docker ps
+# docker images
 
 # ------------------------------------------------------------------------------
 # customization
