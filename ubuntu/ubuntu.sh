@@ -200,6 +200,13 @@ sudo apt-get install -y mysql-workbench
 sudo apt-get install -y postgresql-9.5
 sudo apt-get install -y pgadmin3
 
+# sudo -u postgres psql
+# psql
+# \password postgres
+
+# sudo -i -u postgres
+# createdb database_name
+
 # sqlite
 sudo apt-get install -y sqlite3 libsqlite3-dev
 
