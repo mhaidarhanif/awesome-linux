@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Postman
+Comment=Postman helps you be more efficient while working with HTTP APIs.
+GenericName=HTTP Client
+Exec=/opt/postman/Postman %F
+Icon=/opt/postman/resources/app/assets/icon.png
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Utility;HTTPClient;Development;
+MimeType=text/plain;
