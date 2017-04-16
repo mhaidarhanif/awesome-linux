@@ -59,7 +59,7 @@ sudo apt-get install -y software-properties-common build-essential checkinstall
 
 # indicator
 # display, load, cpu, temp, clipboard
-sudo apt-get install -y fluxgui indicator-multiload indicator-cpufreq psensor copyq
+sudo apt-get install -y fluxgui indicator-multiload indicator-cpufreq psensor lm-sensors copyq
 
 # git-lfs
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
