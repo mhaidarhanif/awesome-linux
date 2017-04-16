@@ -221,9 +221,13 @@ sudo apt-get install -y redis-server
 # robomongo
 ## wget https://download.robomongo.org/0.8.5/linux/robomongo-0.8.5-x86_64.deb
 ## sudo dpkg -i robomongo-0.8.5-x86_64.deb
+sudo cp ./assets/robomongo.png /opt/robomongo/icon.png
+sudo cp ./launcher/robomongo.desktop /usr/share/applications/
 
 # nginx
 sudo apt-get install -y nginx
+# sudo service nginx status
+# nginx -s reload
 
 # sdkman
 
@@ -268,6 +272,9 @@ sudo apt-get install -y gconf-editor unity-tweak-tool
 # gnome
 sudo add-apt-repository -y ppa:gnome3-team/gnome3
 sudo apt install -y gnome gnome-shell
+
+# launcher
+sudo apt install -y menulibre
 
 # theme
 # dark
