@@ -138,13 +138,24 @@ sudo apt-get install -y default-jre default-jdk
 # sudo apt-get install -y android-studio
 
 # ------------------------------------------------------------------------------
+# development tools
+
+# postman
+wget https://app.getpostman.com/app/download/linux64
+sudo tar xzf Postman-linux-*.tar.gz -C /opt
+sudo mv /opt/Postman /opt/postman
+sudo cp ./launcher/postman.desktop /usr/share/applications/
+
+# ------------------------------------------------------------------------------
 # multimedia
 
 # transmission
 sudo apt-get install -y transmission
 
 # youtube-dl
-sudo apt-get install -y youtube-dl
+# sudo apt-get install -y youtube-dl
+sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
+sudo chmod a+rx /usr/local/bin/youtube-dl
 
 # pinta
 sudo apt-get install -y pinta
