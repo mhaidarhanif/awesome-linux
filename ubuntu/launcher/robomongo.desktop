@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Robomongo
+Comment=Native and cross-platform MongoDB manager.
+GenericName=MongoDB GUI Client
+Exec=/opt/robomongo/bin/robomongo %F
+Icon=/opt/robomongo/icon.png
+Type=Application
+StartupNotify=true
+Categories=GNOME;GTK;Utility;Database;MongoDB;
+MimeType=text/plain;
