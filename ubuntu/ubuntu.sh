@@ -10,11 +10,16 @@ sudo apt-get install -y \
   git tig \
   curl httpie wget \
   silversearcher-ag \
-  trash-cli
+  trash-cli \
+  cloc \
+  dconf-tools
 
 # ssh
 # https://help.ubuntu.com/community/SSH/OpenSSH/Configuring
 sudo ufw allow 22
+
+# set default terminal
+sudo update-alternatives --config x-terminal-emulator
 
 # ------------------------------------------------------------------------------
 
@@ -65,11 +70,6 @@ curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.s
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 sudo apt-get install -y chromium-browser google-chrome-stable
-
-# Extensions
-# AdBlock Pro
-# Auto History Wipe
-# Postman
 
 # firefox
 sudo apt-get install -y firefox
