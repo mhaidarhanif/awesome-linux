@@ -2,7 +2,7 @@
 # ubuntu.sh
 # ==============================================================================
 
-# yadm
+# tooling
 sudo apt-get install -y \
   yadm \
   ssh tmux xclip unzip tree \
@@ -13,6 +13,11 @@ sudo apt-get install -y \
   trash-cli \
   cloc \
   dconf-tools
+
+# fasd, cli navigator
+sudo add-apt-repository ppa:aacebedo/fasd
+sudo apt-get update
+sudo apt-get install -y fasd
 
 # ssh
 # https://help.ubuntu.com/community/SSH/OpenSSH/Configuring
