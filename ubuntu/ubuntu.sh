@@ -280,12 +280,23 @@ sudo add-apt-repository \
    $(lsb_release -cs) \
    stable"
 sudo apt-get update
+# docker-engine
 sudo apt-get install -y docker-ce
+# docker-compose
+pip install docker-compose
+# docker users
 sudo groupadd docker
 sudo usermod -aG docker $USER
-# logout
-# docker ps
+# logout to use without sudo
+# docker ps -a
 # docker images
+# quit interactive: Ctrl+p + Ctrl+q
+
+# portainer
+docker run --name portainer -d -p 9000:9000 -v "/var/run/docker.sock:/var/run/docker.sock" portainer/portainer
+
+# virtualbox
+sudo apt-get install -y virtualbox
 
 # ------------------------------------------------------------------------------
 # customization
