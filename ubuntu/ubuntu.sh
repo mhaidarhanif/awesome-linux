@@ -152,6 +152,12 @@ sudo apt-get install -y default-jre default-jdk
 # sudo mkdir /opt/android-studio
 # sudo apt-get install -y android-studio
 
+# php
+sudo apt-get install -y php-fpm php-mysql
+sudo vim /etc/php/7.0/fpm/php.ini
+# cgi.fix_pathinfo=0
+sudo service php7.0-fpm restart
+
 # ------------------------------------------------------------------------------
 # development tools
 
