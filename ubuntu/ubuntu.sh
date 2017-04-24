@@ -320,6 +320,23 @@ sudo apt-get update
 sudo apt-get install -y gtk2-engines-murrine arc-theme
 sudo apt-get install -y moka-icon-theme faba-icon-theme faba-mono-icons
 
+# font
+wget -O fira.zip https://github.com/mozilla/Fira/archive/master.zip
+wget http://dl.dafont.com/dl/?f=flottflott
+unzip fira.zip
+unzip flottflott.zip -d flottflott
+sudo mkdir -p /usr/share/fonts/truetype/fira
+sudo mkdir -p /usr/share/fonts/truetype/flottflott
+sudo cp Fira-master/ttf/* /usr/share/fonts/truetype/fira
+sudo cp flottflott/*.ttf /usr/share/fonts/truetype/flottflott
+
+# emoji
+# https://github.com/eosrei/EmojiOne-Color-Font
+sudo add-apt-repository -y ppa:eosrei/fonts
+sudo apt-get update
+sudo apt-get install -y fonts-emojione-svginot
+# sudo apt-get install -y fonts-twemoji-svginot
+
 # ------------------------------------------------------------------------------
 # cleanup
 
