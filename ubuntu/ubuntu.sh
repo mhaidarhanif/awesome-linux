@@ -122,10 +122,13 @@ npm install -g \
   bunyan \
   nsp nsp-formatter-checkstyle \
   sloc \
+  gatsby \
+  gitbook-cli \
   wt-cli
 
 # python
 sudo apt-get install -y python python-pip
+pip install speedtest-cli
 
 # ruby
 sudo apt-get install -y ruby
