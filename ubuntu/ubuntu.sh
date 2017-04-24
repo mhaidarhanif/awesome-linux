@@ -69,6 +69,13 @@ sudo apt-get install -y fluxgui indicator-multiload indicator-cpufreq psensor lm
 # git-lfs
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 
+# keyboard
+# especially for thinkpad
+sudo apt-get install -y xautomation
+# Replace PrintScreen key as ContextMenu key in Keyboard shortcuts
+# name: Open context menu
+# command: xte 'keydown Shift_L' 'key F10' 'keyup Shift_L'
+
 # ------------------------------------------------------------------------------
 
 # chromium, google chrome
